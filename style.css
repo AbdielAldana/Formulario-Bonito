@@ -1,0 +1,248 @@
+:root {
+    --verde-subway: #009245; /* Verde Subway */
+    --verde-claro: #c8dcb0; /* Verde claro */
+    --amarillo-subway: #FEDD00; /* Amarillo Subway */
+    --amarillo-claro: #fff3b9; /* Amarillo claro */
+    --blanco: #FFFFFF; /* Blanco */
+    --negro: #232323; /* Negro */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    color: var(--verde-subway);
+}
+
+hr {
+    border-color: var(--verde-subway);
+}
+
+.formulario {
+    width: 500px;
+    height: auto;
+    padding: 40px;
+    background-color: var(--blanco);
+    border-radius: 15px;
+    color: var(--verde-subway);
+}
+
+.formulario .element {
+    margin: 10px 0px;
+}
+
+/* .formulario .element select {
+    text-align: center;
+
+    width: 100%;
+    font-size: 16px;
+    height: 35px;
+    border-radius: 10px;
+
+    padding: 5px;
+
+    backdrop-filter: blur(.5px);
+
+    background-color: white;
+    color: var(--color-azul-oscuro);
+
+    border: none;
+    outline: none; 
+} */
+
+/* The container must be positioned relative: */
+.custom-select {
+    position: relative;
+    font-family: Arial;
+  }
+  
+.custom-select select {
+    display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+    background-color: var(--verde-claro);
+    /* border-radius: 10px 10px 0 0; */
+    text-align: center;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 47px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: var(--verde-subway) transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent var(--verde-subway) transparent;
+    top: 40px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+    color: var(--verde-subway);
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: var(--verde-subway);
+    cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    background-color: var(--blanco);
+    font-weight: bold;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    text-align: center;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: var(--amarillo-claro);
+}
+
+
+/* :::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+/* Oculta los radios originales */
+/* Estilos para el contenedor del radio */
+input[type="radio"] {
+    display: none; /* Oculta el radio original */
+}
+
+input[type="radio"]:checked + label {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Estilos para el contenedor del radio personalizado */
+input[type="radio"] + label {
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px 0;
+    padding-left: 25px; /* Espacio para el círculo personalizado */
+    position: relative;
+    font-family: Arial, sans-serif; /* Opcional: ajusta la fuente según sea necesario */
+}
+
+/* Estilos para el círculo del radio */
+input[type="radio"] + label:before {
+    content: '';
+    background-color: var(--verde-claro);
+    border: solid 1px var(--verde-subway);
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--color-verde-subway); /* Utiliza el color verde Subway */
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Estilos para el círculo del radio cuando está seleccionado */
+input[type="radio"]:checked + label:before {
+    border: var(--verde-subway) solid 1px; 
+}
+
+input[type="radio"]:checked + label::after {
+    content: '';
+    background-color: var(--verde-subway);
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform:  translateY(-50%) translateX(50%);
+}
+
+/* Estilos para el texto de la etiqueta */
+input[type="radio"] + label {
+    color: var(--color-negro); /* Utiliza el color negro */
+}
+
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+/* Estilos para el contenedor del checkbox */
+input[type="checkbox"] {
+    display: none; /* Oculta el checkbox original */
+}
+
+/* Estilos para el contenedor del checkbox personalizado */
+input[type="checkbox"]:checked + label {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+input[type="checkbox"] + label {
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px 0;
+    padding-left: 25px; /* Espacio para la palomita personalizada */
+    position: relative;
+    font-family: Arial, sans-serif; /* Opcional: ajusta la fuente según sea necesario */
+}
+
+/* Estilos para la palomita */
+input[type="checkbox"] + label:before {
+    content: ''; /* Caracter Unicode para la palomita */
+    font-size: 16px; /* Tamaño de la palomita */
+    color: transparent; /* Color transparente por defecto */
+    background-color: var(--verde-claro);
+    border-radius: 3px; /* Bordes redondeados */
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    line-height: 18px; /* Alinea verticalmente la palomita */
+    text-align: center; /* Alinea horizontalmente la palomita */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+input[type="checkbox"]:checked + label::after {
+    content: '';
+    height: 10px;
+    width: 10px;
+    background-color: var(--verde-subway);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(50%) ;
+}
+
+/* Estilos para la palomita cuando está marcado */
+input[type="checkbox"]:checked + label:before {
+    color: var(--color-blanco); /* Color blanco cuando está marcado */
+    background-color: var(--verde-claro); 
+}
